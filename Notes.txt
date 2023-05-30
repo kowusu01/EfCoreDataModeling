@@ -1,0 +1,33 @@
+﻿
+Model First
+
+Steps
+
+model
+  - create models with appropriate either by annotations, or by Convention
+  - create ef context and add configurations by fluentApi as needed
+
+code 
+ - write the basic code in Program.cs to configure and connect to the db
+   this is needed for the migration to run
+
+migrations
+  - execute the commands in Package Manager Console
+   1. add-migration create_bank_account_migrations
+   2. update-database –verbose
+
+- check in the db to make sure all tables are created
+
+
+
+Helpful Stuff
+
+start docker postgres
+ - docker run --name postgres-instance -e POSTGRES_PASSWORD=xxxxxxx -p 5432:5432 -d xxxxxxxxx
+
+stop and remove postgres
+ - docker stop postgres-instance
+ - docker rm postgres-instance
+
+view db details
+ - docker exec -ti postgres-instance psql -U postgres
