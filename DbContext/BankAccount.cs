@@ -17,5 +17,11 @@ namespace EfCoreDataModeling
 
         [Column("[account_status")]
         public string AccountStatus { get; set; }
+
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; }
+
+        // one-to-many
+        ICollection<UserAccount> Holders { get; set; }
     }
 }

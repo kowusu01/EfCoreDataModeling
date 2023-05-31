@@ -25,11 +25,18 @@ namespace EfCoreDataModeling
         [Column("is_primary")]
         public bool IsPrimary { get; set; }
 
+        [Column("is_vip")]
+        public bool IsVIP { get; set; }
+
         [Column("is_active")]
         public bool IsActive { get; set; }
 
-        [Column("is_vip")]
-        public bool IsVIP { get; set; }
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; }
+
+
+        ICollection<UserAccount> AccountLinks { get; set; }
+        AccountHolderAddress AddressLink { get; set; }
 
     }
 }

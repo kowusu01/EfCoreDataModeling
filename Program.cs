@@ -9,11 +9,11 @@ Console.WriteLine("Hello, World!");
 
 
 ///
-/// basic code to pget migration going
+/// basic code to get migration going
 /// 
 var builder = Host.CreateDefaultBuilder(args);
 
-string connectionString = "Host=localhost;Database=XXXXXXXXX;Username=XXXXXXXXXXXXXX;Password=XXXXXXXXXXXX";
+string connectionString = "Host=localhost;Database=bank_accounts;Username=postgres;Password=postgrespw";
 
 StartupHelper.ConfigureDatabase(builder, connectionString);
 

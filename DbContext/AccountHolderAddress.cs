@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EfCoreDataModeling
 {
-    [Table("holder_addresses")]
+    [Table("holder_address")]
     public class AccountHolderAddress
     {
         [Column("id")]
@@ -19,7 +19,13 @@ namespace EfCoreDataModeling
         [Column("address_id")]
         public int AddressId { get; set; }
 
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; }
+
+        // one-to-one
         public AccountHolder AccountHolder { get; set; }
+
+        //one-to-one
         public Address HolderAddress { get; set; }
     }
 }

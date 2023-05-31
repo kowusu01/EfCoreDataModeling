@@ -22,12 +22,16 @@ migrations
 
 Helpful Stuff
 
+plsql help
+- https://www.postgresqltutorial.com/postgresql-administration/psql-commands/
+
 start docker postgres
- - docker run --name postgres-instance -e POSTGRES_PASSWORD=xxxxxxx -p 5432:5432 -d xxxxxxxxx
+ - docker run --name dev.db -e POSTGRES_PASSWORD=postgrespw -p 5432:5432 -d postgres
 
 stop and remove postgres
- - docker stop postgres-instance
- - docker rm postgres-instance
+ - docker stop dev.db
+ - docker rm dev.db
 
 view db details
- - docker exec -ti postgres-instance psql -U postgres
+ - docker exec -ti dev.db psql -U postgres
+ - select * from bank_account \gdesc -- view columns

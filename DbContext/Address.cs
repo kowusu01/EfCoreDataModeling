@@ -20,5 +20,8 @@ namespace EfCoreDataModeling
         [Column("zipcode")]
         public string ZipCode { get; set; }
 
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; }
+
     }
 }

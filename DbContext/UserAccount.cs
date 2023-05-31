@@ -2,6 +2,10 @@
 
 namespace EfCoreDataModeling
 {
+    /// <summary>
+    /// Relationship table
+    /// </summary>
+
     [Table("holder_account")]
     public class UserAccount
     {
@@ -14,7 +18,13 @@ namespace EfCoreDataModeling
         [Column("account_id")]
         public int AccountId { get; set; }
 
-        public AccountHolder PrimaryAccountHolder { get; set; }
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; }
+
+        // one-to-one
+        public AccountHolder AccountHolder { get; set; }
+
+        // one-to-one
         public BankAccount Account { get; set; }
 
     }
